@@ -8,23 +8,23 @@ This project serves as a starting point for building Flutter applications using 
 
 ### Features
 
-MVVM Architecture for separation of concerns
+- MVVM Architecture for separation of concerns
 
-Provider for efficient state management
+- Provider for efficient state management
 
-API integration for fetching and displaying data
+- API integration for fetching and displaying data
 
-Scalable and maintainable project structure
+- Scalable and maintainable project structure
 
 ### Prerequisites
 
 Before running the project, ensure you have the following installed:
 
-Flutter (Channel stable, 3.29.1)
+- Flutter (Channel stable, 3.29.1)
 
-Dart SDK
+- Dart SDK
 
-Android Studio or VS Code (with Flutter extension)
+- Android Studio or VS Code (with Flutter extension)
 
 
 ## Contributing
