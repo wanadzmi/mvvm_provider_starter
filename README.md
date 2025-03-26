@@ -1,16 +1,36 @@
-# mvvm_provider_starter
+# MVVM Provider Starter
 
-A new Flutter project.
+A Flutter project implementing the MVVM (Model-View-ViewModel) pattern with Provider for state management. This repository demonstrates a clean and scalable architecture for handling API calls, managing state, and structuring a Flutter app efficiently.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project serves as a starting point for building Flutter applications using MVVM architecture and Provider for state management.
 
-A few resources to get you started if this is your first Flutter project:
+### Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+MVVM Architecture for separation of concerns
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Provider for efficient state management
+
+API integration for fetching and displaying data
+
+Scalable and maintainable project structure
+
+### Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+Flutter (Channel stable, 3.29.1)
+
+Dart SDK
+
+Android Studio or VS Code (with Flutter extension)
+
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve this project, feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
