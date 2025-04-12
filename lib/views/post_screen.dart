@@ -3,14 +3,14 @@ import 'package:mvvm_provider_starter/models/api_response.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/post_viewmodel.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class PostScreen extends StatefulWidget {
+  const PostScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<PostScreen> createState() => PostScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class PostScreenState extends State<PostScreen> {
   @override
   void initState() {
     super.initState();

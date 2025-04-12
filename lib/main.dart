@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_provider_starter/services/post_service.dart';
 import 'package:provider/provider.dart';
-import 'views/home_screen.dart';
+import 'views/post_screen.dart';
 import 'viewmodels/post_viewmodel.dart';
 import 'repository/post_repository.dart';
 
@@ -23,6 +23,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(home: PostScreen());
   }
 }
