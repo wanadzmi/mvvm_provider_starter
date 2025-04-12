@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_provider_starter/models/api_response.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/post_viewmodel.dart';
-import '../models/response_status.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,10 +12,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  initState() {
+  void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await context.read<PostViewModel>().fetchPosts();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<PostViewModel>().fetchPosts();
     });
   }
 
@@ -29,23 +29,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildBody() {
     final vm = context.watch<PostViewModel>();
-    switch (vm.status) {
-      case ResponseStatus.loading:
+    final response = vm.response;
+
+    switch (response.status) {
+      case ResponseStatus.LOADING:
         return const Center(child: CircularProgressIndicator());
-
-      case ResponseStatus.error:
-        return Center(child: Text(vm.errorMessage ?? "Unknown error"));
-
-      case ResponseStatus.success:
+      case ResponseStatus.ERROR:
+        return Center(child: Text(response.error ?? "Unknown error"));
+      case ResponseStatus.COMPLETED:
         return ListView.builder(
-          itemCount: vm.posts.length,
+          itemCount: response.data?.length ?? 0,
           itemBuilder: (context, index) {
-            final post = vm.posts[index];
+            final post = response.data![index];
             return ListTile(title: Text(post.title), subtitle: Text(post.body));
           },
         );
-
-      case ResponseStatus.idle:
+      case ResponseStatus.INITIAL:
+      case ResponseStatus.CONSUMED:
         return const Center(child: Text("Press refresh to load posts"));
     }
   }
